@@ -12,7 +12,10 @@ pkgs.stdenv.mkDerivation rec {
   };
 
   dontBuild = true;
-  nativeBuildInputs = with pkgs; [ rpmextract gzip ];
+  
+  nativeBuildInputs = with pkgs; [ autoPatchelfHook ];
+  buildInputs = with pkgs; [ rpmextract gzip cups ];
+
   unpackPhase = ''
     rpmextract $src
     cd opt/epson-inkjet-printer-201310w
