@@ -22,8 +22,8 @@ pkgs.stdenv.mkDerivation rec {
   '';
 
   postInstall = ''
-    mkdir -p $out/share/cups/model/epson-inkjet-printer-201310w
-    cp -a ppds $out/share/cups/model/epson-inkjet-printer-201310w
+    mkdir -p $out/share/cups/model
+    cp -a ppds/Epson/Epson-L120_Series-epson-driver.ppd $out/share/cups/model
     cp -a doc lib64 resource watermark $out
     mkdir -p $out/lib/cups/filter
     cp -a cups/lib/filter/epson_inkjet_printer_filter $out/lib/cups/filter
