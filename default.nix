@@ -17,7 +17,7 @@ pkgs.stdenv.mkDerivation rec {
     rpmextract $src
     cd opt/epson-inkjet-printer-201310w
     gzip --decompress ppds/Epson/Epson-L120_Series-epson-driver.ppd.gz
-    substituteInPlace ppds/Epson/Epson-L120_Series-epson-driver.ppd --replace "/opt/epson-inkjet-printer-201310w/cups/lib/filter" "$out/cups/lib/filter"
+    substituteInPlace ppds/Epson/Epson-L120_Series-epson-driver.ppd --replace "/opt/epson-inkjet-printer-201310w/cups/lib/filter" "$out/lib/cups/filter"
     substituteInPlace ppds/Epson/Epson-L120_Series-epson-driver.ppd --replace "/home/epson/projects/PrinterDriver/P2/_rpmbuild/SOURCES/epson-inkjet-printer-201310w-1.0.1/watermark" "$out/watermark"
   '';
 
